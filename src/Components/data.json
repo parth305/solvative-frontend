@@ -1,0 +1,20 @@
+[
+    {
+      "id": 1,
+      "name": "John Doe",
+      "p5Balance": 100,
+      "rewardBalance": 50
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "p5Balance": 75,
+      "rewardBalance": 30
+    },
+    {
+      "id": 3,
+      "name": "Bob Johnson",
+      "p5Balance": 150,
+      "rewardBalance": 20
+    }
+]

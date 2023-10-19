@@ -1,24 +1,42 @@
 import React from 'react'
 import "./Home.css"
-const Home = () => {
+import { Link } from 'react-router-dom';
+import UserRow from './UserRow/UserRow'; 
+
+const Home = ({ users }) => {
+  console.log(users);
+  const hasUsers = users && users.length > 0;
+
   return (
-    <div className='homeContainer'>
+    <div>
+      <header className="header">
+        <h1>Welcome to Your App</h1>
+        <Link to="/new" className="new-user-button"> {/* Link to the "/new" route */}
+          New User
+        </Link>
+      </header>
+      <div className="homeContainer">
+       {hasUsers ? ( 
        <table className='homeTbale'>
-        <tr>
-            <th className='thHome'>#</th>
-            <th className='thHome'>Name</th>
-            <th className='thHome'>P5 balance</th>
-            <th className='thHome'>Reward Balance</th>
-            <th className='thHome'>Login</th>
-        </tr>
-        <tr>
-            <td className='tdHome'>Value 1</td>
-            <td className='tdHome'>Value 2</td>
-            <td className='tdHome'>Value 1</td>
-            <td className='tdHome'>Value 2</td>
-            <td className='tdHome'>Value 1</td>
-        </tr>
+       <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>P5 Balance</th>
+            <th>Reward Balance</th>
+            <th>Login</th>
+          </tr>
+        </thead>
+        <tbody>
+          {users.map((user, index) => (
+            <UserRow key={user.id} user={user} index={index} />
+          ))}
+        </tbody>
         </table>
+        ) : (
+          <p>Create a new user to proceed.</p>
+      )}
+      </div>
     </div>
   )
 }

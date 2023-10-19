@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 50vh;
 }
 
 .homeTbales {
@@ -22,3 +22,21 @@ th, td {
 th {
     background-color: #f2f2f2;
 }
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 10px;
+    background-color: #3e3e3e;
+    color: white;
+  }
+  
+  .new-user-button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }

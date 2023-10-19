@@ -1,0 +1,40 @@
+/* RewardHistory.css */
+
+.centered-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #333;
+    color: white;
+  }
+  
+  .reward-history-table {
+    border-collapse: collapse;
+    width: 80%;
+    margin-top: 20px;
+  }
+  
+  .reward-history-table th {
+    background-color: #333;
+    color: white;
+    padding: 10px;
+  }
+  
+  .reward-history-table th,
+  .reward-history-table td {
+    border: 1px solid #ccc;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  
