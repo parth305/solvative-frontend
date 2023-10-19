@@ -4,21 +4,30 @@ import React, { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import "./NewReward.css";
 
-const NewReward = () => {
+const NewReward = ({usersData}) => {
   const { id } = useParams();
   const navigate = useNavigate();
 
-  const usersData = [
-   
-  ];
 
   const [selectedUser, setSelectedUser] = useState('');
   const [rewardAmount, setRewardAmount] = useState(0);
 
-  const maxRewardAmount = usersData.find((user) => user.id === parseInt(id, 10)).p5Balance;
+  const maxRewardAmount = usersData.find((user) => user._id === id).P5.balance;
 
   const handleRewardSubmit = () => {
-  
+    console.log({amount:rewardAmount,givenTo:selectedUser});
+    fetch('http://localhost:5000/api/v1/transecation/'+id, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({amount:rewardAmount,givenTo:usersData.filter(el=>el.name===selectedUser)[0]}),
+    })
+      .then(response => response.json())
+      .then(data => {
+       console.log("success",data);
+      })
+      .catch(error => console.error('Error posting data:', error));
     navigate(`/${id}/p5`);
   };
 
@@ -36,7 +45,7 @@ const NewReward = () => {
           <select value={selectedUser} onChange={(e) => setSelectedUser(e.target.value)}>
             <option value="">-- Select User --</option>
             {usersData
-              .filter((user) => user.id !== parseInt(id, 10)) 
+              .filter((user) => user._id !== id, 10) 
               .map((user) => (
                 <option key={user.id} value={user.id}>
                   {user.name}

@@ -30,7 +30,7 @@ function App() {
         />
         <Route path="/:id/p5" element={<P5History />} />
         <Route path="/:id/rewards" element={<RewardHistory />} />
-        <Route path="/:id/rewards/new" element={<NewReward />} />
+        <Route path="/:id/rewards/new" element={<NewReward usersData={usersData}/>} />
       </Routes>
     </BrowserRouter>
   );

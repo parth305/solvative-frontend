@@ -1,5 +1,3 @@
-// ViewUser.js
-
 import React, { useState } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import './ViewUser.css';
