@@ -3,9 +3,7 @@ import { Link, useParams } from 'react-router-dom';
 import './ViewUser.css';
 
 const ViewUser = ({ users, setUser }) => {
-    console.log("avdf",users);
   const { id } = useParams();
-  console.log(id);
   const user = users.find((user) => user._id === id);
 
   const [name, setName] = useState(user.name);

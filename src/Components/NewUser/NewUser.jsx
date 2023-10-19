@@ -19,7 +19,6 @@ const NewUser = () => {
        console.log(data);
       })
       .catch(error => console.error('Error posting data:', error));
-    console.log(`New user saved: ${name}`);
 
     navigate('/');
   };

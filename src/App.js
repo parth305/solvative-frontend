@@ -12,7 +12,6 @@ function App() {
   const [usersData, setUserData] = useState(null);
 
   useEffect(() => {
-    // Fetch the data from the API
     fetch('http://localhost:5000/api/v1/user')
       .then(response => response.json())
       .then(data =>{console.log(data); setUserData(data)})

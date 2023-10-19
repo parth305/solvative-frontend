@@ -15,7 +15,6 @@ const NewReward = ({usersData}) => {
   const maxRewardAmount = usersData.find((user) => user._id === id).P5.balance;
 
   const handleRewardSubmit = () => {
-    console.log({amount:rewardAmount,givenTo:selectedUser});
     fetch('http://localhost:5000/api/v1/transecation/'+id, {
       method: 'POST',
       headers: {
@@ -25,7 +24,6 @@ const NewReward = ({usersData}) => {
     })
       .then(response => response.json())
       .then(data => {
-       console.log("success",data);
       })
       .catch(error => console.error('Error posting data:', error));
     navigate(`/${id}/p5`);

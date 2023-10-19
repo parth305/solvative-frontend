@@ -11,7 +11,7 @@ const RewardHistory = () => {
   useEffect(() => {
     fetch('http://localhost:5000/api/v1/transecation/reward/'+id)
       .then(response => response.json())
-      .then(data =>{console.log("heyasasasasa",data); setrewardHistoryData(data)})
+      .then(data =>{ setrewardHistoryData(data)})
       .catch(error => console.error('Error fetching data:', error));
   }, []);
   
