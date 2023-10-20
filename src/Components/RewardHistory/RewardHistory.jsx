@@ -39,8 +39,8 @@ const RewardHistory = () => {
               <tr key={item.id}>
                 <td>{index + 1}</td>
                 <td>{item.createdAt}</td>
-                <td>{item.givenTo.reward.balance}</td>
-                <td>{item.givenTo.name}</td>
+                <td>{item.amount}</td>
+                <td>{item.givenBy.name}</td>
               </tr>
             ))}
           </tbody>

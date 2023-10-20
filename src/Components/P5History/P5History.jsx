@@ -40,8 +40,8 @@ const[p5HistoryData,setp5HistoryData]=useState([])
               <tr key={item.id}>
                 <td>{index + 1}</td>
                 <td>{item.createdAt}</td>
-                <td>{item.givenBy.P5.balance}</td>
-                <td>{item.givenBy.name}</td>
+                <td>{item.amount}</td>
+                <td>{item.givenTo.name}</td>
                 <td>
                   <button className="delete-button">Delete</button>
                 </td>
